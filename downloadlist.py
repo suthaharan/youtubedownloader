@@ -1,13 +1,15 @@
 from pytube import YouTube
 from pytube import Playlist
 
+downloadDirectory = './videolist'
+
 def Downloadlist(listURL):
     playlistlink = listURL
     playlist = Playlist(playlistlink)
     for video in playlist.videos:
         print(video.watch_url)
         #print(vars(video))
-        Download(video.watch_url, './nuxtrestaurant')
+        Download(video.watch_url, downloadDirectory)
 
 
 
